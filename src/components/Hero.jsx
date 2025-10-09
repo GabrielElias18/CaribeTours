@@ -25,7 +25,7 @@ function Hero() {
             Ver Paquetes
           </button>
           <a
-            href="https://wa.me/573001234567?text=Hola,%20estoy%20interesado%20en%20sus%20paquetes%20turísticos"
+            href="https://wa.me/573006024770?text=Hola,%20estoy%20interesado%20en%20sus%20paquetes%20turísticos"
             className="btn-secondary"
             target="_blank"
             rel="noopener noreferrer"

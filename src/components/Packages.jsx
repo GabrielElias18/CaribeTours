@@ -29,7 +29,7 @@ function Packages() {
   const handleReserve = (packageName) => {
     const message = `Hola, estoy interesado en el paquete: ${packageName}`;
     window.open(
-      `https://wa.me/573001234567?text=${encodeURIComponent(message)}`,
+      `https://wa.me/573006024770?text=${encodeURIComponent(message)}`,
       '_blank'
     );
   };

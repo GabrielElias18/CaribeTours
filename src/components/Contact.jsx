@@ -70,7 +70,7 @@ function Contact() {
       setTimeout(() => {
         const message = `Hola, soy ${formData.nombre}.\nEstoy interesado en: ${formData.paquete}.\n\nMensaje: ${formData.mensaje}\n\nContacto:\nEmail: ${formData.email}\nTeléfono: ${formData.telefono}`;
         window.open(
-          `https://wa.me/573001234567?text=${encodeURIComponent(message)}`,
+          `https://wa.me/573006024770?text=${encodeURIComponent(message)}`,
           '_blank'
         );
 
@@ -111,9 +111,9 @@ function Contact() {
             <div className="info-card">
               <div className="info-icon phone">📞</div>
               <h3>Teléfono / WhatsApp</h3>
-              <a href="tel:+573001234567">+57 300 123 4567</a>
+              <a href="tel:+573006024770">+57 300 602 4770</a>
               <a
-                href="https://wa.me/573001234567"
+                href="https://wa.me/573006024770"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-link"
