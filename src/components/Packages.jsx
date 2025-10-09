@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { packages } from '../data/packages';
 import './Packages.css';
 
 function Packages() {
   const [visibleCards, setVisibleCards] = useState([]);
   const cardsRef = useRef([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,6 +36,10 @@ function Packages() {
     );
   };
 
+  const handleViewDetails = (packageId) => {
+    navigate(`/paquete/${packageId}`);
+  };
+
   return (
     <section id="paquetes" className="packages">
       <div className="packages-container">
@@ -51,6 +57,8 @@ function Packages() {
               ref={(el) => (cardsRef.current[index] = el)}
               data-index={index}
               className={`package-card ${visibleCards.includes(index) ? 'visible' : ''}`}
+              onClick={() => handleViewDetails(pkg.id)}
+              style={{ cursor: 'pointer' }}
             >
               <div className="package-image">
                 <img src={pkg.image} alt={pkg.name} loading="lazy" />
@@ -64,15 +72,6 @@ function Packages() {
                 <h3 className="package-name">{pkg.name}</h3>
                 <p className="package-description">{pkg.description}</p>
 
-                <ul className="package-includes">
-                  {pkg.includes.map((item, idx) => (
-                    <li key={idx}>
-                      <span className="check-icon">✓</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
                 <div className="package-footer">
                   <div className="package-price">
                     <span className="price-label">Desde</span>
@@ -81,7 +80,10 @@ function Packages() {
                   </div>
                   <button
                     className="btn-reserve"
-                    onClick={() => handleReserve(pkg.name)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleReserve(pkg.name);
+                    }}
                   >
                     Reservar
                   </button>

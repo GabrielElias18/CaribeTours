@@ -1,6 +1,6 @@
 .packages {
   padding: 6rem 2rem;
-  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #FAF8F3 0%, #FFFFFF 100%);
 }
 
 .packages-container {
@@ -14,33 +14,37 @@
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  color: #2B2D42;
+  color: #2C3E50;
   margin-bottom: 1rem;
+  letter-spacing: -0.5px;
 }
 
 .section-subtitle {
   font-size: 1.2rem;
-  color: #6c757d;
+  color: #5D6D7E;
   max-width: 600px;
   margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.6;
 }
 
 .packages-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .package-card {
-  background: white;
-  border-radius: 20px;
+  background: #ffffff;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(30px);
+  cursor: pointer;
 }
 
 .package-card.visible {
@@ -49,13 +53,13 @@
 }
 
 .package-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
 }
 
 .package-image {
   position: relative;
-  height: 250px;
+  height: 280px;
   overflow: hidden;
 }
 
@@ -63,27 +67,29 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
 .package-card:hover .package-image img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .package-badge {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: linear-gradient(135deg, #FFB703, #FB8500);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-size: 0.9rem;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  box-shadow: 0 4px 15px rgba(251, 133, 0, 0.3);
+  gap: 0.4rem;
+  box-shadow: 0 4px 12px rgba(231, 111, 81, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .badge-icon {
@@ -91,20 +97,22 @@
 }
 
 .package-content {
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
 .package-name {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #2B2D42;
-  margin-bottom: 0.5rem;
+  color: #2C3E50;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
 }
 
 .package-description {
-  color: #6c757d;
+  color: #5D6D7E;
   margin-bottom: 1.5rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 .package-includes {
@@ -116,101 +124,135 @@
 .package-includes li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0;
-  color: #495057;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  color: #34495E;
   font-size: 0.95rem;
 }
 
 .check-icon {
-  color: #25D366;
+  color: #27AE60;
   font-weight: 700;
   font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
 .package-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1rem;
-  border-top: 2px solid #f1f3f5;
+  padding-top: 1.5rem;
+  border-top: 1px solid #E8E8E8;
+  margin-top: auto;
 }
 
 .package-price {
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
 }
 
 .price-label {
-  font-size: 0.85rem;
-  color: #6c757d;
-  margin-bottom: 0.2rem;
+  font-size: 0.8rem;
+  color: #7F8C8D;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
 .price-amount {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #00B4D8;
+  color: #E76F51;
   line-height: 1;
 }
 
 .price-currency {
-  font-size: 0.9rem;
-  color: #6c757d;
-  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  color: #7F8C8D;
+  font-weight: 500;
 }
 
 .btn-reserve {
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #FF6B35, #FF8C42);
-  color: white;
+  padding: 0.85rem 1.75rem;
+  background: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);
+  color: #ffffff;
   border: none;
-  border-radius: 50px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 12px rgba(231, 111, 81, 0.25);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-reserve:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 6px 18px rgba(231, 111, 81, 0.35);
+  background: linear-gradient(135deg, #f5b074 0%, #ea8066 100%);
 }
 
+.btn-reserve:active {
+  transform: translateY(0);
+}
+
+/* 🌐 Responsivo */
 @media (max-width: 768px) {
   .packages {
-    padding: 4rem 1rem;
+    padding: 4rem 1.5rem;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
   }
 
   .packages-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .package-card {
     max-width: 100%;
   }
+
+  .package-image {
+    height: 240px;
+  }
 }
 
 @media (max-width: 480px) {
+  .packages {
+    padding: 3rem 1rem;
+  }
+
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .section-subtitle {
     font-size: 1rem;
   }
 
+  .package-content {
+    padding: 1.5rem;
+  }
+
   .package-name {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+
+  .package-description {
+    font-size: 0.9rem;
   }
 
   .price-amount {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .package-footer {
@@ -221,5 +263,6 @@
 
   .btn-reserve {
     width: 100%;
+    padding: 1rem;
   }
 }

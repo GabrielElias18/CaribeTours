@@ -4,18 +4,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(0, 180, 216, 0.3), rgba(0, 119, 182, 0.5)),
-    url('https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 
+/* Overlay sutil solo para mejorar legibilidad del texto */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 119, 182, 0.2) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
   z-index: 1;
 }
 
@@ -45,17 +51,19 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.5);
   animation: fadeInUp 1s ease-out 0.2s both;
+  letter-spacing: -0.5px;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
   margin-bottom: 2.5rem;
   line-height: 1.6;
-  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
   opacity: 0.95;
   animation: fadeInUp 1s ease-out 0.4s both;
+  font-weight: 300;
 }
 
 .hero-cta {
@@ -71,7 +79,7 @@
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
   font-weight: 600;
-  border-radius: 50px;
+  border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -79,28 +87,36 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
+/* Paleta inspirada en Cartagena: coral, turquesa, y dorado colonial */
 .btn-primary {
-  background: linear-gradient(135deg, #FF6B35, #FF8C42);
+  background: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);
   color: white;
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 4px 20px rgba(231, 111, 81, 0.3);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(231, 111, 81, 0.4);
+  background: linear-gradient(135deg, #f5b074 0%, #ea8066 100%);
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background: rgba(0, 255, 76, 0.15);
   color: white;
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+  transform: translateY(-2px);
+  background: rgba(5, 112, 32, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
 .whatsapp-icon {
@@ -122,16 +138,19 @@
   display: block;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
 .scroll-indicator {
-  width: 30px;
-  height: 50px;
+  width: 28px;
+  height: 48px;
   border: 2px solid white;
-  border-radius: 25px;
+  border-radius: 20px;
   margin: 0 auto;
   position: relative;
+  opacity: 0.8;
 }
 
 .scroll-indicator::before {
@@ -140,10 +159,10 @@
   top: 8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 8px;
   background: white;
-  border-radius: 50%;
+  border-radius: 2px;
   animation: scrollDown 2s infinite;
 }
 
@@ -153,7 +172,7 @@
     opacity: 1;
   }
   100% {
-    top: 32px;
+    top: 30px;
     opacity: 0;
   }
 }
@@ -173,7 +192,7 @@
   }
 
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .hero-subtitle {
@@ -195,10 +214,14 @@
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .hero-subtitle {
     font-size: 1rem;
+  }
+
+  .hero-scroll {
+    bottom: 1.5rem;
   }
 }

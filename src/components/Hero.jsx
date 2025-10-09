@@ -1,4 +1,5 @@
 import './Hero.css';
+import heroBackground from '../assets/fondo-caribe.jpeg'; // ajusta la ruta según tu estructura
 
 function Hero() {
   const scrollToSection = (sectionId) => {
@@ -9,7 +10,13 @@ function Hero() {
   };
 
   return (
-    <section id="inicio" className="hero">
+    <section
+      id="inicio"
+      className="hero"
+      style={{
+        backgroundImage: `linear-gradient(135deg, rgba(0, 180, 216, 0.3), rgba(0, 119, 182, 0.5)), url(${heroBackground})`,
+      }}
+    >
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <h1 className="hero-title">Descubre el Paraíso del Caribe Colombiano</h1>

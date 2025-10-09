@@ -7,7 +7,7 @@ function Contact() {
     nombre: '',
     email: '',
     telefono: '',
-    paquete: '',
+    paquete: '', 
     mensaje: ''
   });
 

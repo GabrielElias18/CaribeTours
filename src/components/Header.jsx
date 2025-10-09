@@ -31,7 +31,7 @@ function Header() {
       <div className="header-container">
         <div className="logo">
           <span className="logo-icon">🏝️</span>
-          <span className="logo-text">Caribe Tours</span>
+          <span className="logo-text">Trip Cartagena Tours</span>
         </div>
 
         <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>

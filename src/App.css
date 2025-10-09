@@ -24,3 +24,7 @@ body {
 main {
   padding-top: 70px;
 }
+
+main.no-header {
+  padding-top: 0 !important;
+}
