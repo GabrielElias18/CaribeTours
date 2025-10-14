@@ -17,7 +17,7 @@ function Footer() {
           <div className="footer-column">
             <div className="footer-logo">
               <span className="logo-icon">🏝️</span>
-              <span className="logo-text">Caribe Tours</span>
+              <span className="logo-text">Trip Cartagena Tours</span>
             </div>
             <p className="footer-description">
               Tu mejor aliado para descubrir las maravillas del Caribe colombiano.
